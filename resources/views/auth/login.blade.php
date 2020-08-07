@@ -33,3 +33,5 @@
             <p class="myt-3">{!! link_to_route('signup', '新規ユーザー登録する？') !!}</p>
         </div>
     </div>
+    
+    @endsection
