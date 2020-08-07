@@ -33,9 +33,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::group(['prefix' => 'user/{id}'], function() {
        Route::post('follow', 'UserFollowController@store')->name('follow');
        Route::delete('unfollow', 'UserFollowController@destroy')->name('unfollow');
-    });
+});
     
-    Route::put('users', 'UsersController@rename')->name('rename');
-    
-    
+Route::put('users', 'UsersController@rename')->name('rename');
+Route::resource('rest','RestappController', ['only' => ['index', 'show', 'create', 'store', 'destroy']]);
+
 });
