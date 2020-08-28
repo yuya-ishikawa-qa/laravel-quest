@@ -9,7 +9,7 @@
     </div>
 
     <div class="text-center">
-        <h3 class="login_title text-left d-inline-block mt-5">新規ユーザー登録</h3>
+        <h3 class="login_title text-left d-inline-block mt-5">新規ユーザ登録</h3>
     </div>
 
     <div class="row mt-5 mb-5">
