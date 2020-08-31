@@ -1,15 +1,8 @@
-<h2 class="mt-5 mb-5">users</h2>
-
 <div class="movies row mt-5 text-center">
-
-    @foreach ($users as $key => $user)
-
-        @php
     
-            $movie=$user->movies->last();
-        
-        @endphp
-    
+    @foreach ($movies as $key => $movie)
+
+
         @if($loop->iteration % 3 == 1 && $loop->iteration != 1)
     
             </div>
@@ -22,8 +15,6 @@
 
                 <div class="movie text-left d-inline-block">
 
-                    ＠{!! link_to_route('users.show',$user->name,['id'=>$user->id]) !!}
-
                     <div>
                         @if($movie)
                             <iframe width="290" height="163.125" src="{{ 'https://www.youtube.com/embed/'.$movie->url }}?controls=1&loop=1&playlist={{ $movie->url }}" frameborder="0"></iframe>
@@ -31,12 +22,18 @@
                             <iframe width="290" height="163.125" src="https://www.youtube.com/embed/" frameborder="0"></iframe>
                         @endif
                     </div>
-                    
+          
                     <p>
                         @if(isset($movie->comment))
-                               {{ $movie->comment }}
+                            {{ $movie->comment }}
                         @endif
                     </p>
+                    
+                    @if(Auth::id() == $movie->user_id)
+                        {!! Form::open(['route' => ['movies.destroy', $movie->id], 'method' => 'delete']) !!}
+                            {!! Form::submit('この動画を削除する？', ['class' => 'button btn btn-danger']) !!}
+                        {!! Form::close() !!}
+                    @endif
 
                 </div>
                 
@@ -46,4 +43,4 @@
 
 </div>
 
-{{ $users->links('pagination::bootstrap-4') }}
+{{ $movies->links('pagination::bootstrap-4') }}
