@@ -1,9 +1,8 @@
 <h2 class="mt-5 mb-5">users</h2>
-
 <div class="movies row mt-5 text-center">
-
+    
     @foreach ($users as $key => $user)
-
+    
         @php
     
             $movie=$user->movies->last();
@@ -37,13 +36,9 @@
                                {{ $movie->comment }}
                         @endif
                     </p>
-
                 </div>
                 
             </div>
-
     @endforeach
-
 </div>
-
 {{ $users->links('pagination::bootstrap-4') }}
