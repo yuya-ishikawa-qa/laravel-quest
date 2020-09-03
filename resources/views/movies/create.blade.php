@@ -26,9 +26,9 @@
                 {!! Form::submit('新規登録する？',['class'=> 'button btn btn-primary mt-5 mb-5']) !!}
 
             </div>
-        {!! Form::close() !!}
-
-
+                
+            </div>
+            
         <h2 class="mt-5">あなたの登録済み動画</h2>
 
         @include('movies.movies', ['movies' => $movies])
