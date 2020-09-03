@@ -1,4 +1,5 @@
 <h2 class="mt-5 mb-5">users</h2>
+
 <div class="movies row mt-5 text-center">
     
     @foreach ($users as $key => $user)
@@ -36,9 +37,15 @@
                                {{ $movie->comment }}
                         @endif
                     </p>
+                    
+                        @include('follow.follow_button',['user'=>$user])
+                    
                 </div>
                 
             </div>
+            
     @endforeach
+    
 </div>
+
 {{ $users->links('pagination::bootstrap-4') }}

@@ -2,7 +2,7 @@
 
 @section('content')
 
-<h1>{{ $user->name }}</h1>
+<h1>{{ $user->channel }}</h1>
 <h1 class="text-right">{{ $user->name }}</h1>
 
 <ul class="nav nav-tabs nav-justified mt-5 mb-2">
